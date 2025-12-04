@@ -390,6 +390,15 @@ ul {
     background: var(--accent-color);
 }
 
+/* Instagram/social image sizing */
+.social-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
+}
+
 .footer p {
     font-size: 0.9rem;
     opacity: 0.7;
