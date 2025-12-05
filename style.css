@@ -65,18 +65,7 @@ ul {
 .nav {
     display: flex;
     align-items: center;
-    gap: 15px;
-}
-
-@media (max-width: 599px) {
-    .nav-link {
-        font-size: 0.9rem;
-    }
-    
-    .btn-contact {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
+    gap: 20px;
 }
 
 .nav-link {
@@ -102,11 +91,80 @@ ul {
     color: #fff;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: all var(--transition-speed);
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+@media (max-width: 599px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 20px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-speed);
+        gap: 0;
+    }
+
+    .nav.active {
+        max-height: 400px;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 20px;
+        color: var(--primary-color);
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .btn-contact {
+        margin: 10px 20px;
+        width: calc(100% - 40px);
+        text-align: center;
+    }
+}
+
 /* Hero Section */
 .hero {
     position: relative;
-    height: 60vh;
-    min-height: 300px;
+    height: 80vh;
+    min-height: 500px;
     background-image: url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=2070&auto=format&fit=crop');
     /* Placeholder high-quality yacht image */
     background-size: cover;
@@ -135,14 +193,14 @@ ul {
 }
 
 .hero h1 {
-    font-size: 1.75rem;
+    font-size: 3rem;
     font-weight: 600;
     margin-bottom: 15px;
     letter-spacing: 1px;
 }
 
 .sub-heading {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
     opacity: 0.9;
 }
@@ -165,7 +223,7 @@ ul {
 
 /* Why Choose Us Section */
 .why-us-section {
-    padding: 40px 0;
+    padding: 80px 0;
     background-color: #fff;
 }
 
@@ -175,7 +233,7 @@ ul {
 }
 
 .section-header h2 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 15px;
 }
@@ -230,7 +288,7 @@ ul {
 
 /* Yacht Grid Section */
 .yacht-section {
-    padding: 40px 0;
+    padding: 80px 0;
     background-color: var(--light-gray);
 }
 
@@ -323,7 +381,7 @@ ul {
 
 /* About Section */
 .about-section {
-    padding: 40px 0;
+    padding: 80px 0;
     background-color: #fff;
     text-align: center;
 }
@@ -344,7 +402,7 @@ ul {
 }
 
 .about-section h2 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
@@ -352,7 +410,7 @@ ul {
 .about-section p {
     color: #555;
     margin-bottom: 30px;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     line-height: 1.8;
 }
 
@@ -420,32 +478,6 @@ ul {
     .yacht-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .sub-heading {
-        font-size: 1.1rem;
-    }
-    
-    .section-header h2 {
-        font-size: 2.2rem;
-    }
-    
-    .about-section h2 {
-        font-size: 2.2rem;
-    }
-    
-    .about-section p {
-        font-size: 1.05rem;
-    }
-    
-    .why-us-section,
-    .yacht-section,
-    .about-section {
-        padding: 60px 0;
-    }
 }
 
 @media (min-width: 1000px) {
@@ -455,27 +487,5 @@ ul {
 
     .hero h1 {
         font-size: 4rem;
-    }
-    
-    .sub-heading {
-        font-size: 1.2rem;
-    }
-    
-    .section-header h2 {
-        font-size: 2.5rem;
-    }
-    
-    .about-section h2 {
-        font-size: 2.5rem;
-    }
-    
-    .about-section p {
-        font-size: 1.1rem;
-    }
-    
-    .why-us-section,
-    .yacht-section,
-    .about-section {
-        padding: 80px 0;
     }
 }
